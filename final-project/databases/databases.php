@@ -1,12 +1,27 @@
 <?php
-  $dns = '';
-  $dns .= 'mysql:host='.$db_host.';';
-  $dns .= 'port='.$db_port.';';
-  $dns .= 'dbname='.$db_name.';';
+class DatabaseConnection
+{
+  private static $instance;
+  private PDO $pdo;
 
-  $pdo = new pdo(
-    $dns, 
-    $db_user, 
-    $db_pwd
-  ); //Se crea una nueva conexíon a la base de datos
-?>
+  private function __construct()
+  {
+    global $db_host, $db_port, $db_name, $db_user, $db_pwd;
+
+    $dns = 'mysql:host=' . $db_host . ';port=' . $db_port . ';dbname=' . $db_name;
+    $this->pdo = new PDO($dns, $db_user, $db_pwd);
+  }
+
+  public static function getInstance()
+  {
+    if (!isset(self::$instance)) {
+      self::$instance = new self();
+    }
+    return self::$instance;
+  }
+
+  public function getPdo()
+  {
+    return $this->pdo;
+  }
+}
