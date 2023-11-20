@@ -1,0 +1,11 @@
+body {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+main{
+  width: 96%;
+  margin:0 auto;
+  background: cyan;
+  height: 600px;
+}
