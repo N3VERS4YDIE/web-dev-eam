@@ -8,4 +8,4 @@ require_once $FILE_BASE_ROOT . 'controllers/stock_controller.php';
 $module = $_GET['module'];
 $controllerName = $module . 'Controller';
 $controllerName::getInstance()->create($_POST);
-header("Location: " . $WEB_BASE_ROOT . 'modules/' . $module);
+header("Location: " . $WEB_BASE_ROOT . 'modules?module=' . $module);

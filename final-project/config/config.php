@@ -3,7 +3,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-$FILE_BASE_ROOT = '/home/n3vers4ydie/workspace/eam/web-dev-eam/final-project/';
+$FILE_BASE_ROOT = '/your/absolute/path/to/web-dev-eam/final-project/';
 $WEB_BASE_ROOT = 'http://localhost:8000/';
 
 $db_host = '127.0.0.1';
