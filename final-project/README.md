@@ -4,7 +4,7 @@
 
 The objective is to create a web application mainly with PHP and SQL to manage the CRUD of the following modules: Stock, Shopping and Products.
 > [!NOTE]
-> To enhance the user experience, it is highly recommended to incorporate **AJAX**. This will allow for seamless data updates without requiring page refreshes. I plan to implementat this feature later.
+> To enhance the user experience, it is highly recommended to incorporate **AJAX**. This will allow for seamless data updates without requiring page refreshes. I plan to implement this feature later.
 
 ## Overview
 
