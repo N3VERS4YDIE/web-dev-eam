@@ -1,15 +1,4 @@
 <?php
-// CREATE TABLE `shopping` (
-//  `store_id` int(10) UNSIGNED NOT NULL,
-//  `seller_id` int(10) UNSIGNED NOT NULL,
-//  `client_id` int(10) UNSIGNED NOT NULL,
-//  `product_id` int(10) UNSIGNED NOT NULL,
-//  `quantity` int(10) UNSIGNED NOT NULL,
-//  `date` date NOT NULL DEFAULT current_timestamp()
-//  
-//
-// do the same but for Store, Seller, Client, Product, Price, Quantity, Total Line
-
 require_once 'controller.php';
 
 class ShoppingController extends Controller

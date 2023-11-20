@@ -12,7 +12,8 @@ $controller = $controllerName::getInstance();
 <div class="crud-container">
     <?php
     $controller->renderCreateForm();
-    $controller->renderTable();
+    $show_actions = $module != 'shopping';
+    $controller->renderTable($show_actions);
     ?>
 </div>
 <?php
