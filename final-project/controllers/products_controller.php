@@ -12,7 +12,7 @@ class ProductsController extends Controller
         INNER JOIN categories C ON P.category_id = C.id
         INNER JOIN brands B ON P.brand_id = B.id
         INNER JOIN countries MC ON P.manufacturing_country_id = MC.id
-        ORDER BY id DESC";
+        ORDER BY P.id DESC";
         $formColums = [
             'name' => 'Product',
             'price' => 'Price',

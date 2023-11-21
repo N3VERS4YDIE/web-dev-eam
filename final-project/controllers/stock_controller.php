@@ -12,7 +12,7 @@ class StockController extends Controller
         INNER JOIN stores S2 ON S.store_id = S2.id
         INNER JOIN employees E ON S.stock_admin_id = E.id
         INNER JOIN products P ON S.product_id = P.id
-        ORDER BY id DESC";
+        ORDER BY S.id DESC";
         $formColums = [
             'store_id' => 'Store',
             'stock_admin_id' => 'Stock Manager',

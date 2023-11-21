@@ -11,10 +11,12 @@ $controller = $controllerName::getInstance();
 ?>
 <div class="crud-container">
     <?php
-    $controller->renderCreateForm();
+    echo $controller->renderCreateForm();
     $show_actions = $module != 'shopping';
-    $controller->renderTable($show_actions);
+    echo $controller->renderTable($show_actions);
     ?>
 </div>
+
 <?php
 require_once $FILE_BASE_ROOT . 'layout/templates/partials/footer.php';
+require_once $FILE_BASE_ROOT . 'layout/templates/partials/ajax_scripts.php';

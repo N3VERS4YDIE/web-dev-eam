@@ -17,7 +17,7 @@ class DAO
 
     public function create($data)
     {
-        print_r(array_keys($data));
+        unset($data['id']);
         $stmt = $this->pdo->prepare("INSERT INTO {$this->table} (" . implode(',', array_keys($data)) . ") VALUES (:" . implode(',:', array_keys($data)) . ")");
         foreach ($data as $key => $value) {
             $stmt->bindValue(":{$key}", $value);
@@ -37,10 +37,12 @@ class DAO
         return $stmt;
     }
 
-    public function readById($id)
+    public function readById($id, $defaultSelectQuery = false)
     {
-        $sql = "SELECT * FROM {$this->table} WHERE id='{$id}'";
-        return $this->pdo->query($sql);
+        $stmt = $this->pdo->prepare("SELECT * FROM {$this->table} WHERE id=:id");
+        $stmt->bindValue(':id', $id);
+        $stmt->execute();
+        return $stmt;
     }
 
     public function update($id, $data)
@@ -59,7 +61,14 @@ class DAO
 
     public function delete($id)
     {
-        $sql = "DELETE FROM {$this->table} WHERE id='{$id}'";
-        return $this->pdo->query($sql);
+        $stmt = $this->pdo->prepare("DELETE FROM {$this->table} WHERE id=:id");
+        $stmt->bindValue(":id", $id);
+        return $stmt->execute();
+    }
+
+    public function getMaxId()
+    {
+        $sql = "SELECT MAX(id) FROM {$this->table}";
+        return $this->pdo->query($sql)->fetchColumn();
     }
 }

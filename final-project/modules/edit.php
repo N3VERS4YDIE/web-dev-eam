@@ -14,4 +14,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     header("Location: " . $WEB_BASE_ROOT . 'modules?module=' . $module);
 }
 
-$controllerName::getInstance()->renderEditForm();
+echo $controllerName::getInstance()->renderEditForm();
+
+require_once $FILE_BASE_ROOT . 'layout/templates/partials/ajax_scripts.php';
